@@ -1,0 +1,37 @@
+void main(){
+  mobil m = new mobil();
+  hewan h = new hewan();
+
+  print("Kapasitas Mobil : " + m.kapasitas.toString());
+  print("List Hewan Yang Di Angkut : " + m.muatan.toString());
+  print("Total Muatan : " + m.totalMuatan().toString());
+
+  m.totalMuatan();
+  m.tambahMuatan();
+}
+
+class hewan{
+  List<int>berat = [100,50,10];
+}
+
+class mobil extends hewan{
+  var kapasitas = 500;
+  var muatan = ["Kadal", "Buaya"];
+
+  tambahMuatan(){
+    if(kapasitas >= totalMuatan()){
+      print("Hewan $muatan masuk ke kapasitas mobil");
+    }
+    else{
+      print("Hewan $muatan tidak masuk ke kapasitas mobil");
+
+    }
+  }
+  totalMuatan(){
+   var total = 0;
+   for (var i=0; i<berat.length; i++){
+    total += berat[i];
+   }
+   return total;
+  }
+}
